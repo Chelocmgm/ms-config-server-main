@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: ms-config-server
+  cloud:
+    config:
+      server:
+        git:
+         # uri: https://github.com/Chelocmgm/configuraciones
+          uri: git@github.com:Chelocmgm/configuraciones.git
+          ignore-local-ssh-settings: true
+          host-key: "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEmKSENjQEezOmxkZMy7opKgwFB9nkt5YRrYMjNuG5N87uRgg6CLrbo5wAdT/y6v0mKV0U2w0WZ2YB/++Tpockg="
+          host-key-algorithm: ecdsa-sha2-nistp256
+          private-key: |
+            -----BEGIN EC PRIVATE KEY-----
+            MHcCAQEEIIC7Aj/KSgB9X31+wzQbkRdhiZZmTIiseUzza0PjOU5eoAoGCCqGSM49
+            AwEHoUQDQgAE7cFBDbB9lLi3IkOMVe9F4OMQHRIstY0HTnevzAn8r+0VLs7xECe2
+            o/kPwG7e/LfvOp1OgrbfMdoYG8VB9azHkg==
+            -----END EC PRIVATE KEY-----
+server:
+  port: 8888
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    serviceUrl:
+      defaulZone: ${EUREKA_URI:http://localhost:8761/eureka}
+
+encrypt:
+  key: Ca1TM0WIl2laSCTxmFLIAa415G5N87uRSd
